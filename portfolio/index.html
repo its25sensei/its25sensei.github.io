@@ -57,6 +57,12 @@
   .figs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .figs .wide { grid-column: 1 / -1; }
   .narrow { max-width: 420px; }
+  .embed { position: relative; width: 100%; aspect-ratio: 1512 / 982; margin: 14px 0 10px; border: 1px solid var(--line);
+    border-radius: 8px; overflow: hidden; background: #fff; }
+  .embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .card h4 { margin: 22px 0 8px; font-size: 1rem; }
+  .compare { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .compare figure { margin: 0; }
   .placeholder { border: 1.5px dashed var(--line); border-radius: 8px; padding: 26px 16px;
     text-align: center; color: var(--muted); font-size: .92rem; margin: 12px 0; }
   footer { margin-top: 64px; padding-top: 18px; border-top: 1px solid var(--line);
@@ -64,6 +70,7 @@
   @media (max-width: 600px) {
     .wrap { padding: 36px 16px 64px; }
     .figs { grid-template-columns: 1fr; }
+    .compare { grid-template-columns: 1fr; }
     .card { padding: 18px 16px 14px; }
   }
 </style>
@@ -139,8 +146,8 @@
     <p>A reproducible pipeline covering hypothesis tests, bootstrap mediation analysis, and visualization, validated end to end on simulated data. The figures below show the pipeline recovering the patterns built into the simulation; they are not results from participants.</p>
     <div class="figs">
       <figure><img src="assets/fig1_trust.png" alt="Simulated trust by citation condition" loading="lazy"><figcaption>Trust by condition (simulated)</figcaption></figure>
-      <figure><img src="assets/fig2_adoption.png" alt="Simulated adoption of the wrong recommendation by condition" loading="lazy"><figcaption>Adoption of the wrong recommendation (simulated)</figcaption></figure>
-      <figure class="wide"><img src="assets/fig3_verification.png" alt="Simulated perceived verifiability and source clicks" loading="lazy"><figcaption>Perceived verifiability and verification behavior (simulated)</figcaption></figure>
+      <figure><img src="assets/fig2_adoption.png" alt="Simulated adoption of the incorrect recommendation by condition" loading="lazy"><figcaption>Adoption of the incorrect recommendation (simulated)</figcaption></figure>
+      <figure class="wide"><img src="assets/fig3_verification.png" alt="Simulated perceived verifiability and source clicks" loading="lazy"><figcaption>Perceived verifiability and source clicks (simulated)</figcaption></figure>
     </div>
     <div class="actions"><a href="https://github.com/its25sensei/verification-theater">Code on GitHub</a></div>
   </article>
@@ -166,12 +173,37 @@
   <h2>Creative &amp; Interactive</h2>
   <p class="area-desc">Interface design for making AI evidence inspectable.</p>
 
-  <!-- TODO (Leah): replace the placeholder with the Figma prototype link, 2–3 screenshots, and design notes once built. -->
   <article class="card" id="prototype">
     <h3>Verification Theater · Interactive prototype</h3>
-    <div class="tags"><span class="tag">Figma</span><span class="tag">Independent</span><span class="tag pending">In progress · December 2026</span></div>
-    <p>A clickable prototype of the participant-facing interface for the three experimental conditions, showing how the same AI recommendation appears with no sources, with unverifiable sources, and with genuine sources that open to the cited passage.</p>
-    <div class="placeholder">Prototype link and screenshots will be added here.</div>
+    <div class="tags"><span class="tag">Figma</span><span class="tag">Individual project</span><span class="tag">13 screens · 2 overlays</span></div>
+    <p>A clickable prototype of the participant-facing interface. Every path shows the same incorrect AI recommendation: Laptop A is the better value on every listed specification, but the AI recommends Laptop B. Only the sources attached to the recommendation change.</p>
+
+    <div class="embed">
+      <iframe title="Verification Theater interactive prototype" src="https://embed.figma.com/proto/yyLEbLRzTF1paOHHLae02E/Verification-Theater---Prototype?node-id=13-393&amp;starting-point-node-id=13%3A393&amp;page-id=1%3A2&amp;scaling=scale-down&amp;content-scaling=fixed&amp;hide-ui=1&amp;embed-host=share" loading="lazy" allowfullscreen></iframe>
+    </div>
+    <div class="actions"><a href="https://www.figma.com/proto/yyLEbLRzTF1paOHHLae02E/Verification-Theater---Prototype?node-id=13-393&amp;starting-point-node-id=13%3A393&amp;page-id=1%3A2&amp;scaling=scale-down&amp;content-scaling=fixed" target="_blank" rel="noopener">Open the prototype in a new tab</a></div>
+
+    <h4>What to try</h4>
+    <ul>
+      <li><strong>C2 · Unverifiable sources.</strong> The “View full data sources” link looks active and responds to hover, but clicking it does nothing.</li>
+      <li><strong>C3 · Verifiable but misleading sources.</strong> The same link opens the cited material, which contradicts the recommendation.</li>
+      <li><strong>Decision page.</strong> Options and the 1–7 scale have hover and selected states, and Next stays unavailable until both questions are answered.</li>
+    </ul>
+
+    <h4>The three conditions at a glance</h4>
+    <p class="area-desc" style="margin-bottom:10px">Select an image to view it full size.</p>
+    <div class="compare">
+      <figure><a href="assets/proto_c1.png" target="_blank" rel="noopener"><img src="assets/proto_c1.png" alt="Condition 1: the AI recommendation with reasoning only and no sources" loading="lazy" width="768" height="495"></a><figcaption><strong>C1</strong> · Reasoning only</figcaption></figure>
+      <figure><a href="assets/proto_c2.png" target="_blank" rel="noopener"><img src="assets/proto_c2.png" alt="Condition 2: the same recommendation followed by professional-looking references that cannot be opened" loading="lazy" width="768" height="495"></a><figcaption><strong>C2</strong> · Sources that cannot be verified</figcaption></figure>
+      <figure><a href="assets/proto_c3.png" target="_blank" rel="noopener"><img src="assets/proto_c3.png" alt="Condition 3: the same recommendation followed by genuine references that can be opened" loading="lazy" width="768" height="495"></a><figcaption><strong>C3</strong> · Genuine sources, misleading interpretation</figcaption></figure>
+    </div>
+
+    <h4>Design decisions</h4>
+    <p>The recommendation card is a single shared component, so its wording, size, and position are identical in every condition. The source link has the same appearance and hover state in C2 and C3; only what happens on click differs, so the conditions cannot be told apart without checking. Scale labels and feedback text are neutral: the page echoes the selected number and never evaluates it.</p>
+
+    <h4>Design exploration: a second AI model</h4>
+    <p>The prototype also contains three screens that are not part of the current study. They sketch an interface for a follow-up question: do people treat agreement between AI models as independent confirmation? A second model either agrees with the incorrect recommendation, disagrees with it, or agrees while the interface notes that the two models are not independent. Each screen offers a link to re-open the specifications, so that checking can be observed as behavior.</p>
+    <p>The question builds on findings that people follow unanimous AI panels more readily (<a href="https://arxiv.org/abs/2603.22152">Tsuchiya &amp; Baba, 2026</a>), that a disagreeing second opinion reduces overreliance but also reliance on correct advice (<a href="https://arxiv.org/abs/2401.07058">Lu, Wang &amp; Yin, 2024</a>), and that language models often make the same mistakes (<a href="https://arxiv.org/abs/2506.07962">Kim et al., 2025</a>). This is an interface concept only; hypotheses, measures, and a power analysis have not been developed.</p>
   </article>
 
   <!-- TODO (Leah): add live demo link, screenshots, and repo link after the team agrees and the final project is submitted. -->
