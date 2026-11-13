@@ -3,223 +3,243 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>Leah Li · Research Portfolio</title>
 <meta name="description" content="Research portfolio of Quanjun (Leah) Li: human–AI trust, verification, and interaction design.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #fbfaf7; --surface: #ffffff; --ink: #1d1d1f; --muted: #5d5d63;
-    --line: #e4e1da; --accent: #1f5f8b; --accent-soft: #e8f0f6;
-    --tag-bg: #f1eee7; --pending-bg: #fff6e0; --pending-ink: #7a5a00;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #141416; --surface: #1c1c1f; --ink: #ececee; --muted: #a3a3ab;
-      --line: #2e2e33; --accent: #7fb6dc; --accent-soft: #1c2a35;
-      --tag-bg: #26262b; --pending-bg: #2e2715; --pending-ink: #e8c76a;
-    }
-  }
-  * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body { margin: 0; background: var(--bg); color: var(--ink);
-    font: 16px/1.65 Inter, system-ui, -apple-system, "Segoe UI", sans-serif; }
-  a { color: var(--accent); text-underline-offset: 2px; }
-  .wrap { max-width: 860px; margin: 0 auto; padding: 56px 20px 80px; }
-  header h1 { font-family: "Source Serif 4", Georgia, serif; font-weight: 600;
-    font-size: clamp(2rem, 5vw, 2.6rem); line-height: 1.15; margin: 0 0 6px; }
-  .subtitle { color: var(--muted); margin: 0 0 14px; }
-  .links { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: .95rem; }
-  .intro { margin-top: 28px; font-size: 1.05rem; }
-  .note { margin-top: 18px; padding: 12px 16px; border-left: 3px solid var(--accent);
-    background: var(--accent-soft); border-radius: 0 8px 8px 0; font-size: .93rem; }
-  .start { margin-top: 28px; padding: 18px 20px; background: var(--surface);
-    border: 1px solid var(--line); border-radius: 12px; }
-  .start h2 { margin: 0 0 8px; font-size: 1rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
-  .start ol { margin: 0; padding-left: 1.2rem; }
-  section.area { margin-top: 56px; }
-  section.area > h2 { font-family: "Source Serif 4", Georgia, serif; font-weight: 600;
-    font-size: 1.6rem; margin: 0 0 4px; }
-  .area-desc { color: var(--muted); margin: 0 0 20px; }
-  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
-    padding: 22px 22px 18px; margin-bottom: 18px; }
-  .card h3 { margin: 0 0 6px; font-size: 1.15rem; line-height: 1.35; }
-  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 12px; }
-  .tag { font-size: .78rem; padding: 2px 9px; border-radius: 999px; background: var(--tag-bg); color: var(--muted); }
-  .tag.pending { background: var(--pending-bg); color: var(--pending-ink); font-weight: 500; }
-  .card p { margin: 0 0 10px; }
-  .card ul { margin: 0 0 10px; padding-left: 1.2rem; }
-  .actions { display: flex; flex-wrap: wrap; gap: 8px 16px; font-weight: 500; font-size: .95rem; }
-  figure { margin: 14px 0; }
-  figure img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
-  figcaption { font-size: .85rem; color: var(--muted); margin-top: 6px; }
-  .figs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .figs .wide { grid-column: 1 / -1; }
-  .narrow { max-width: 420px; }
-  .embed { position: relative; width: 100%; aspect-ratio: 1512 / 982; margin: 14px 0 10px; border: 1px solid var(--line);
-    border-radius: 8px; overflow: hidden; background: #fff; }
-  .embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-  .card h4 { margin: 22px 0 8px; font-size: 1rem; }
-  .compare { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-  .compare figure { margin: 0; }
-  .placeholder { border: 1.5px dashed var(--line); border-radius: 8px; padding: 26px 16px;
-    text-align: center; color: var(--muted); font-size: .92rem; margin: 12px 0; }
-  footer { margin-top: 64px; padding-top: 18px; border-top: 1px solid var(--line);
-    color: var(--muted); font-size: .88rem; }
-  @media (max-width: 600px) {
-    .wrap { padding: 36px 16px 64px; }
-    .figs { grid-template-columns: 1fr; }
-    .compare { grid-template-columns: 1fr; }
-    .card { padding: 18px 16px 14px; }
-  }
-</style>
+<link rel="preload" href="../assets/fonts/bebas-neue-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/site.css">
 </head>
-<body>
-<div class="wrap">
+<body id="top">
 
-<header>
-  <h1>Quanjun (Leah) Li</h1>
-  <p class="subtitle">Research portfolio · Human–AI trust, verification, and interaction design</p>
-  <nav class="links" aria-label="Contact and profiles">
+<header class="wrap bar">
+  <a href="../">Quanjun (Leah) Li</a>
+  <nav aria-label="Sections">
+    <a href="#interpretive">Interpretive</a>
+    <a href="#technical">Technical</a>
+    <a href="#creative">Creative</a>
     <a href="../">Home</a>
-    <a href="mailto:quanjun.leah.li@gmail.com">quanjun.leah.li@gmail.com</a>
-    <a href="https://github.com/its25sensei">GitHub</a>
-    <a href="https://linkedin.com/in/its25sensei">LinkedIn</a>
   </nav>
 </header>
 
-<p class="intro">I study how people come to trust AI systems through what interfaces show them: citations, source statements, and confidence cues that look like evidence but may not be checkable. My work combines behavioral experiments with interaction design, with the goal of building interfaces that help people's trust match the evidence behind an AI's output.</p>
+<main>
 
-<p class="note"><strong>Status of the work.</strong> No human-participant data have been collected yet. All results shown below come from simulated data and demonstrate that the analysis pipelines work; they are not empirical findings.</p>
+<section class="wrap hero">
+  <h2>Research portfolio</h2>
+  <div class="split">
+    <ul class="contact-list" aria-label="Contact and profiles">
+      <li><a href="mailto:quanjun.leah.li@gmail.com">Email</a></li>
+      <li><a href="https://github.com/its25sensei">GitHub</a></li>
+      <li><a href="https://linkedin.com/in/its25sensei">LinkedIn</a></li>
+    </ul>
+    <div class="measure">
+      <p class="small muted">Human–AI trust, verification, and interaction design</p>
+      <p>I study how people come to trust AI systems through what interfaces show them: citations, source statements, and confidence cues that look like evidence but may not be checkable. My work combines behavioral experiments with interaction design, with the goal of building interfaces that help people's trust match the evidence behind an AI's output.</p>
+      <div class="note"><p><strong>Status of the work.</strong> No human-participant data have been collected yet. All results shown below come from simulated data and demonstrate that the analysis pipelines work; they are not empirical findings.</p></div>
+    </div>
+  </div>
+</section>
 
-<div class="start">
-  <h2>Where to start</h2>
-  <ol>
-    <li><a href="#writing-sample">Writing sample</a>: a research proposal on how the source of an AI explanation shapes trust and privacy concern.</li>
-    <li><a href="#verification-theater">Verification Theater</a>: an experiment on whether citations make wrong AI advice more persuasive.</li>
-    <li><a href="#prototype">Interactive prototype</a>: the participant-facing interface for Verification Theater.</li>
+<div class="band-white">
+<section class="wrap section" id="start">
+  <h2 class="section-head">Where to start</h2>
+  <ol class="rows">
+    <li><a class="row numbered" href="#writing-sample"><span class="row-num">1</span><span class="row-title">Writing sample</span><span class="row-desc">A research proposal on how the source of an AI explanation shapes trust and privacy concern.</span></a></li>
+    <li><a class="row numbered" href="#verification-theater"><span class="row-num">2</span><span class="row-title">Verification Theater</span><span class="row-desc">An experiment on whether citations make wrong AI advice more persuasive.</span></a></li>
+    <li><a class="row numbered" href="#prototype"><span class="row-num">3</span><span class="row-title">Interactive prototype</span><span class="row-desc">The participant-facing interface for Verification Theater.</span></a></li>
   </ol>
+</section>
 </div>
 
 <!-- ============ INTERPRETIVE ============ -->
-<section class="area" id="interpretive">
-  <h2>Interpretive</h2>
-  <p class="area-desc">Social-scientific research on how people interpret AI-generated evidence. This is the primary focus of my work.</p>
+<section class="wrap section" id="interpretive">
+  <div class="split section-head">
+    <h2>Interpretive</h2>
+    <p>Social-scientific research on how people interpret AI-generated evidence. This is the primary focus of my work.</p>
+  </div>
 
-  <article class="card" id="writing-sample">
-    <h3>Writing sample · Source-Based AI Recommendation Explanations</h3>
-    <div class="tags"><span class="tag">Research proposal</span><span class="tag">9 pages</span><span class="tag">Independent</span></div>
-    <p>A proposal for a five-condition between-subjects experiment. An AI shopping assistant explains the same recommendation using a user's past behavior, other customers' reviews, product features, a mix of sources, or no stated source. The study tests whether an explanation that feels more relevant because it reveals personal data also raises privacy concern, and how these responses shape trust and reliance.</p>
-    <p>The proposal covers theory, hypotheses, stimuli, measures, power analysis (minimum N = 305; recruitment target N = 360), and a two-stage pilot protocol.</p>
-    <div class="actions">
-      <a href="docs/Leah_Li_Writing_Sample.pdf">Read the writing sample (PDF)</a>
-      <a href="https://github.com/its25sensei/source-based-ai-recommendations">Study materials on GitHub</a>
+  <article class="project split" id="writing-sample">
+    <div>
+      <h3>Writing sample&nbsp;· Source-Based AI Recommendation Explanations</h3>
+      <p class="tags"><span>Research proposal</span><span>9 pages</span><span>Independent</span></p>
+    </div>
+    <div class="project-body">
+      <p>A proposal for a five-condition between-subjects experiment. An AI shopping assistant explains the same recommendation using a user's past behavior, other customers' reviews, product features, a mix of sources, or no stated source. The study tests whether an explanation that feels more relevant because it reveals personal data also raises privacy concern, and how these responses shape trust and reliance.</p>
+      <p>The proposal covers theory, hypotheses, stimuli, measures, power analysis (minimum N = 305; recruitment target N = 360), and a two-stage pilot protocol.</p>
+      <div class="actions">
+        <a href="docs/Leah_Li_Writing_Sample.pdf">Read the writing sample (PDF)</a>
+        <a href="https://github.com/its25sensei/source-based-ai-recommendations">Study materials on GitHub</a>
+      </div>
     </div>
   </article>
 
-  <article class="card" id="verification-theater">
-    <h3>Verification Theater · Study design</h3>
-    <div class="tags"><span class="tag">Experiment design</span><span class="tag">Independent</span></div>
-    <p>Every participant chooses between two laptops and receives the same incorrect AI recommendation. Only the support attached to it varies:</p>
-    <ul>
-      <li><strong>Reasoning only</strong>, with no sources;</li>
-      <li><strong>Professional-looking sources that cannot be verified</strong>;</li>
-      <li><strong>Genuine, verifiable sources whose interpretation is misleading</strong>.</li>
-    </ul>
-    <p>The design logs which sources participants open, so verification is observed as behavior rather than inferred from self-report. The third condition asks the question I care about most: is being checkable enough, or can real sources still lend credibility to wrong advice?</p>
-    <div class="actions">
-      <a href="https://github.com/its25sensei/verification-theater/blob/main/docs/design.md">Design document</a>
-      <a href="https://github.com/its25sensei/verification-theater/tree/main/materials">Stimuli, measures, consent</a>
+  <article class="project split" id="verification-theater">
+    <div>
+      <h3>Verification Theater&nbsp;· Study design</h3>
+      <p class="tags"><span>Experiment design</span><span>Independent</span></p>
+    </div>
+    <div class="project-body">
+      <p>Every participant chooses between two laptops and receives the same incorrect AI recommendation. Only the support attached to it varies:</p>
+      <ul>
+        <li><strong>Reasoning only</strong>, with no sources;</li>
+        <li><strong>Professional-looking sources that cannot be verified</strong>;</li>
+        <li><strong>Genuine, verifiable sources whose interpretation is misleading</strong>.</li>
+      </ul>
+      <p>The design logs which sources participants open, so verification is observed as behavior rather than inferred from self-report. The third condition asks the question I care about most: is being checkable enough, or can real sources still lend credibility to wrong advice?</p>
+      <div class="actions">
+        <a href="https://github.com/its25sensei/verification-theater/blob/main/docs/design.md">Design document</a>
+        <a href="https://github.com/its25sensei/verification-theater/tree/main/materials">Stimuli, measures, consent</a>
+      </div>
     </div>
   </article>
 </section>
 
 <!-- ============ TECHNICAL ============ -->
-<section class="area" id="technical">
-  <h2>Technical</h2>
-  <p class="area-desc">Analysis pipelines and simulations in Python.</p>
+<section class="wrap section" id="technical">
+  <div class="split section-head">
+    <h2>Technical</h2>
+    <p>Analysis pipelines and simulations in Python.</p>
+  </div>
 
-  <article class="card">
-    <h3>Verification Theater · Analysis pipeline</h3>
-    <div class="tags"><span class="tag">Python</span><span class="tag">Simulated data</span><span class="tag">Independent</span></div>
-    <p>A reproducible pipeline covering hypothesis tests, bootstrap mediation analysis, and visualization, validated end to end on simulated data. The figures below show the pipeline recovering the patterns built into the simulation; they are not results from participants.</p>
-    <div class="figs">
-      <figure><img src="assets/fig1_trust.png" alt="Simulated trust by citation condition" loading="lazy"><figcaption>Trust by condition (simulated)</figcaption></figure>
-      <figure><img src="assets/fig2_adoption.png" alt="Simulated adoption of the incorrect recommendation by condition" loading="lazy"><figcaption>Adoption of the incorrect recommendation (simulated)</figcaption></figure>
-      <figure class="wide"><img src="assets/fig3_verification.png" alt="Simulated perceived verifiability and source clicks" loading="lazy"><figcaption>Perceived verifiability and source clicks (simulated)</figcaption></figure>
+  <article class="project split">
+    <div>
+      <h3>Verification Theater&nbsp;· Analysis pipeline</h3>
+      <p class="tags"><span>Python</span><span>Simulated data</span><span>Independent</span></p>
     </div>
-    <div class="actions"><a href="https://github.com/its25sensei/verification-theater">Code on GitHub</a></div>
+    <div class="project-body">
+      <p>A reproducible pipeline covering hypothesis tests, bootstrap mediation analysis, and visualization, validated end to end on simulated data. The figures below show the pipeline recovering the patterns built into the simulation; they are not results from participants.</p>
+      <div class="figs">
+        <figure><img src="assets/fig1_trust.png" alt="Simulated trust by citation condition" loading="lazy"><figcaption>Trust by condition (simulated)</figcaption></figure>
+        <figure><img src="assets/fig2_adoption.png" alt="Simulated adoption of the incorrect recommendation by condition" loading="lazy"><figcaption>Adoption of the incorrect recommendation (simulated)</figcaption></figure>
+        <figure class="wide"><img src="assets/fig3_verification.png" alt="Simulated perceived verifiability and source clicks" loading="lazy"><figcaption>Perceived verifiability and source clicks (simulated)</figcaption></figure>
+      </div>
+      <div class="actions"><a href="https://github.com/its25sensei/verification-theater">Code on GitHub</a></div>
+    </div>
   </article>
 
-  <article class="card">
-    <h3>Confidence-calibration simulation</h3>
-    <div class="tags"><span class="tag">Python · Jupyter</span><span class="tag">Simulated data</span><span class="tag">Independent</span></div>
-    <p>A design probe on the system side of the same problem: how far an AI's stated confidence can drift from its accuracy. It compares an overconfident and a confidence-matched condition using expected calibration error (ECE: 0.275 vs. 0.026 in one simulated run). It led to the question that connects my projects: does a well-calibrated system actually help users calibrate their trust?</p>
-    <figure class="narrow"><img src="assets/ece_calibration.png" alt="Calibration curves for the two simulated conditions" loading="lazy"><figcaption>Calibration curves for the two simulated conditions</figcaption></figure>
-    <div class="actions"><a href="https://github.com/its25sensei/vt-ece">Notebook on GitHub</a></div>
+  <article class="project split">
+    <div>
+      <h3>Confidence-calibration simulation</h3>
+      <p class="tags"><span>Python · Jupyter</span><span>Simulated data</span><span>Independent</span></p>
+    </div>
+    <div class="project-body">
+      <p>A design probe on the system side of the same problem: how far an AI's stated confidence can drift from its accuracy. It compares an overconfident and a confidence-matched condition using expected calibration error (ECE: 0.275 vs. 0.026 in one simulated run). It led to the question that connects my projects: does a well-calibrated system actually help users calibrate their trust?</p>
+      <figure class="narrow"><img src="assets/ece_calibration.png" alt="Calibration curves for the two simulated conditions" loading="lazy"><figcaption>Calibration curves for the two simulated conditions</figcaption></figure>
+      <div class="actions"><a href="https://github.com/its25sensei/vt-ece">Notebook on GitHub</a></div>
+    </div>
   </article>
 
-  <article class="card">
-    <h3>Benford's Law screening of SEC filings</h3>
-    <div class="tags"><span class="tag">Python · pandas · scipy</span><span class="tag">~3.2M values</span><span class="tag">Independent</span></div>
-    <p>I applied Benford's Law screening to approximately 3.2 million values from SEC XBRL filings and cross-validated flagged observations against an independent accrual-based indicator. The anomalies that survived reflected the reporting structure of business development companies rather than manipulation: a statistically real signal that, read without its context, would have suggested misconduct that was not there.</p>
-    <div class="actions"><a href="https://github.com/its25sensei/benford-anomaly-detection">Code on GitHub</a></div>
+  <article class="project split">
+    <div>
+      <h3>Benford's Law screening of SEC filings</h3>
+      <p class="tags"><span>Python · pandas · scipy</span><span>~3.2M values</span><span>Independent</span></p>
+    </div>
+    <div class="project-body">
+      <p>I applied Benford's Law screening to approximately 3.2 million values from SEC XBRL filings and cross-validated flagged observations against an independent accrual-based indicator. The anomalies that survived reflected the reporting structure of business development companies rather than manipulation: a statistically real signal that, read without its context, would have suggested misconduct that was not there.</p>
+      <div class="actions"><a href="https://github.com/its25sensei/benford-anomaly-detection">Code on GitHub</a></div>
+    </div>
   </article>
 </section>
 
 <!-- ============ CREATIVE & INTERACTIVE ============ -->
-<section class="area" id="creative">
-  <h2>Creative &amp; Interactive</h2>
-  <p class="area-desc">Interface design for making AI evidence inspectable.</p>
+<section class="wrap section" id="creative">
+  <div class="split section-head">
+    <h2>Creative &amp; Interactive</h2>
+    <p>Interface design for making AI evidence inspectable.</p>
+  </div>
 
-  <article class="card" id="prototype">
-    <h3>Verification Theater · Interactive prototype</h3>
-    <div class="tags"><span class="tag">Figma</span><span class="tag">Individual project</span><span class="tag">13 screens · 2 overlays</span></div>
-    <p>A clickable prototype of the participant-facing interface. Every path shows the same incorrect AI recommendation: Laptop A is the better value on every listed specification, but the AI recommends Laptop B. Only the sources attached to the recommendation change.</p>
+  <article class="project" id="prototype">
+    <div class="split">
+      <div>
+        <h3>Verification Theater&nbsp;· Interactive prototype</h3>
+        <p class="tags"><span>Figma</span><span>Individual project</span><span>13 screens · 2 overlays</span></p>
+      </div>
+      <div class="project-body">
+        <p>A clickable prototype of the participant-facing interface. Every path shows the same incorrect AI recommendation: Laptop A is the better value on every listed specification, but the AI recommends Laptop B. Only the sources attached to the recommendation change.</p>
+      </div>
+    </div>
 
     <div class="embed">
       <iframe title="Verification Theater interactive prototype" src="https://embed.figma.com/proto/yyLEbLRzTF1paOHHLae02E/Verification-Theater---Prototype?node-id=13-393&amp;starting-point-node-id=13%3A393&amp;page-id=1%3A2&amp;scaling=scale-down&amp;content-scaling=fixed&amp;hide-ui=1&amp;embed-host=share" loading="lazy" allowfullscreen></iframe>
     </div>
     <div class="actions"><a href="https://www.figma.com/proto/yyLEbLRzTF1paOHHLae02E/Verification-Theater---Prototype?node-id=13-393&amp;starting-point-node-id=13%3A393&amp;page-id=1%3A2&amp;scaling=scale-down&amp;content-scaling=fixed" target="_blank" rel="noopener">Open the prototype in a new tab</a></div>
 
-    <h4>What to try</h4>
-    <ul>
-      <li><strong>C2 · Unverifiable sources.</strong> The “View full data sources” link looks active and responds to hover, but clicking it does nothing.</li>
-      <li><strong>C3 · Verifiable but misleading sources.</strong> The same link opens the cited material, which contradicts the recommendation.</li>
-      <li><strong>Decision page.</strong> Options and the 1–7 scale have hover and selected states, and Next stays unavailable until both questions are answered.</li>
-    </ul>
+    <div class="split sub">
+      <h4>What to try</h4>
+      <div class="project-body">
+        <ul>
+          <li><strong>C2 · Unverifiable sources.</strong> The “View full data sources” link looks active and responds to hover, but clicking it does nothing.</li>
+          <li><strong>C3 · Verifiable but misleading sources.</strong> The same link opens the cited material, which contradicts the recommendation.</li>
+          <li><strong>Decision page.</strong> Options and the 1–7 scale have hover and selected states, and Next stays unavailable until both questions are answered.</li>
+        </ul>
+      </div>
+    </div>
 
-    <h4>The three conditions at a glance</h4>
-    <p class="area-desc" style="margin-bottom:10px">Select an image to view it full size.</p>
+    <div class="full-head">
+      <h4>The three conditions at a glance</h4>
+      <p class="small muted">Select an image to view it full size.</p>
+    </div>
     <div class="compare">
       <figure><a href="assets/proto_c1.png" target="_blank" rel="noopener"><img src="assets/proto_c1.png" alt="Condition 1: the AI recommendation with reasoning only and no sources" loading="lazy" width="768" height="495"></a><figcaption><strong>C1</strong> · Reasoning only</figcaption></figure>
       <figure><a href="assets/proto_c2.png" target="_blank" rel="noopener"><img src="assets/proto_c2.png" alt="Condition 2: the same recommendation followed by professional-looking references that cannot be opened" loading="lazy" width="768" height="495"></a><figcaption><strong>C2</strong> · Sources that cannot be verified</figcaption></figure>
       <figure><a href="assets/proto_c3.png" target="_blank" rel="noopener"><img src="assets/proto_c3.png" alt="Condition 3: the same recommendation followed by genuine references that can be opened" loading="lazy" width="768" height="495"></a><figcaption><strong>C3</strong> · Genuine sources, misleading interpretation</figcaption></figure>
     </div>
 
-    <h4>Design decisions</h4>
-    <p>The recommendation card is a single shared component, so its wording, size, and position are identical in every condition. The source link has the same appearance and hover state in C2 and C3; only what happens on click differs, so the conditions cannot be told apart without checking. Scale labels and feedback text are neutral: the page echoes the selected number and never evaluates it.</p>
+    <div class="split sub">
+      <h4>Design decisions</h4>
+      <div class="project-body">
+        <p>The recommendation card is a single shared component, so its wording, size, and position are identical in every condition. The source link has the same appearance and hover state in C2 and C3; only what happens on click differs, so the conditions cannot be told apart without checking. Scale labels and feedback text are neutral: the page echoes the selected number and never evaluates it.</p>
+      </div>
+    </div>
 
-    <h4>Design exploration: a second AI model</h4>
-    <p>The prototype also contains three screens that are not part of the current study. They sketch an interface for a follow-up question: do people treat agreement between AI models as independent confirmation? A second model either agrees with the incorrect recommendation, disagrees with it, or agrees while the interface notes that the two models are not independent. Each screen offers a link to re-open the specifications, so that checking can be observed as behavior.</p>
-    <p>The question builds on findings that people follow unanimous AI panels more readily (<a href="https://arxiv.org/abs/2603.22152">Tsuchiya &amp; Baba, 2026</a>), that a disagreeing second opinion reduces overreliance but also reliance on correct advice (<a href="https://arxiv.org/abs/2401.07058">Lu, Wang &amp; Yin, 2024</a>), and that language models often make the same mistakes (<a href="https://arxiv.org/abs/2506.07962">Kim et al., 2025</a>). This is an interface concept only; hypotheses, measures, and a power analysis have not been developed.</p>
+    <div class="split sub">
+      <h4>Design exploration: a second AI model</h4>
+      <div class="project-body">
+        <p>The prototype also contains three screens that are not part of the current study. They sketch an interface for a follow-up question: do people treat agreement between AI models as independent confirmation? A second model either agrees with the incorrect recommendation, disagrees with it, or agrees while the interface notes that the two models are not independent. Each screen offers a link to re-open the specifications, so that checking can be observed as behavior.</p>
+        <p>The question builds on findings that people follow unanimous AI panels more readily (<a href="https://arxiv.org/abs/2603.22152">Tsuchiya &amp; Baba, 2026</a>), that a disagreeing second opinion reduces overreliance but also reliance on correct advice (<a href="https://arxiv.org/abs/2401.07058">Lu, Wang &amp; Yin, 2024</a>), and that language models often make the same mistakes (<a href="https://arxiv.org/abs/2506.07962">Kim et al., 2025</a>). This is an interface concept only; hypotheses, measures, and a power analysis have not been developed.</p>
+      </div>
+    </div>
   </article>
 
   <!-- TODO (Leah): add live demo link, screenshots, and repo link after the team agrees and the final project is submitted. -->
-  <article class="card" id="sourcelens">
-    <h3>SourceLens · Explainable product recommendations</h3>
-    <div class="tags"><span class="tag">Team project (3 members)</span><span class="tag">Streamlit · Python · Figma</span><span class="tag pending">In progress · December 2026</span></div>
-    <p>A headphone recommendation system in which every recommendation reason links to the specific evidence behind it: a product specification, an attributed review excerpt, or the user's own stated preference. Users can inspect each reason–source connection directly instead of relying on a general explanation.</p>
-    <p><strong>My contribution:</strong> project manager and UI/UX designer. I led requirements and project coordination and designed the interface in Figma. The recommendation engine and evidence mapping were built by Chaitanya Mehta; the front end, integration, and testing by Shuonan Chen.</p>
-    <div class="placeholder">Live demo and screenshots will be added here.</div>
+  <article class="project split" id="sourcelens">
+    <div>
+      <h3>SourceLens&nbsp;· Explainable product recommendations</h3>
+      <p class="tags"><span>Team project </span><span>Streamlit · Python · Figma</span><span class="pending">In progress · December 2026</span></p>
+    </div>
+    <div class="project-body">
+      <p>A headphone recommendation system in which every recommendation reason links to the specific evidence behind it: a product specification, an attributed review excerpt, or the user's own stated preference. Users can inspect each reason–source connection directly instead of relying on a general explanation.</p>
+      <p><strong>My contribution:</strong> project manager and UI/UX designer. I led requirements and project coordination and designed the interface in Figma. The recommendation engine and evidence mapping were built by Chaitanya Mehta; the front end, integration, and testing by Shuonan Chen.</p>
+      <div class="placeholder">Live demo and screenshots will be added here.</div>
+    </div>
   </article>
 </section>
 
-<footer>
-  Last updated November 2026 · Quanjun (Leah) Li
+</main>
+
+<footer class="band-white foot" id="contact">
+  <div class="wrap">
+    <div class="foot-cols small">
+      <div>
+        <p class="muted">Pages</p>
+        <ul>
+          <li><a href="../">Home</a></li>
+          <li><a href="docs/Leah_Li_Writing_Sample.pdf">Writing sample (PDF)</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="muted">Profiles</p>
+        <ul>
+          <li><a href="https://github.com/its25sensei">GitHub</a></li>
+          <li><a href="https://linkedin.com/in/its25sensei">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base small">
+      <p class="muted">Last updated: November 2026</p>
+      <a href="#top">Back to top</a>
+    </div>
+  </div>
 </footer>
 
-</div>
 </body>
 </html>

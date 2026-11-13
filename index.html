@@ -3,99 +3,104 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>Quanjun (Leah) Li</title>
 <meta name="description" content="Quanjun (Leah) Li studies how people come to trust AI systems through what interfaces show them.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #fbfaf7; --surface: #ffffff; --ink: #1d1d1f; --muted: #5d5d63;
-    --line: #e4e1da; --accent: #1f5f8b; --accent-soft: #e8f0f6;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #141416; --surface: #1c1c1f; --ink: #ececee; --muted: #a3a3ab;
-      --line: #2e2e33; --accent: #7fb6dc; --accent-soft: #1c2a35;
-    }
-  }
-  * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body { margin: 0; background: var(--bg); color: var(--ink);
-    font: 16px/1.65 Inter, system-ui, -apple-system, "Segoe UI", sans-serif; }
-  a { color: var(--accent); text-underline-offset: 2px; }
-  .wrap { max-width: 760px; margin: 0 auto; padding: 64px 20px 80px; }
-  /* Header: add a photo later by uncommenting the <img> below; the layout adapts automatically. */
-  .hero { display: flex; gap: 28px; align-items: center; }
-  .hero img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; flex: none;
-    border: 1px solid var(--line); }
-  h1 { font-family: "Source Serif 4", Georgia, serif; font-weight: 600;
-    font-size: clamp(2rem, 5vw, 2.6rem); line-height: 1.15; margin: 0 0 6px; }
-  .subtitle { color: var(--muted); margin: 0 0 12px; }
-  .links { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: .95rem; }
-  h2 { font-family: "Source Serif 4", Georgia, serif; font-weight: 600; font-size: 1.35rem;
-    margin: 44px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
-  p { margin: 0 0 12px; }
-  .cta { display: inline-block; margin-top: 4px; padding: 10px 18px; border-radius: 8px;
-    background: var(--accent); color: var(--bg); text-decoration: none; font-weight: 600; }
-  .cta:hover { opacity: .9; }
-  /* Magnetic button: the script below sets --mx / --my while the pointer is near. */
-  .cta { transform: translate(var(--mx, 0px), var(--my, 0px)); transition: transform .35s cubic-bezier(.2, .8, .2, 1), opacity .15s; will-change: transform; }
-  .cta:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-  @media (prefers-reduced-motion: reduce) { .cta { transform: none; transition: opacity .15s; } }
-  ul.plain { list-style: none; margin: 0; padding: 0; }
-  ul.plain li { padding: 10px 0; border-bottom: 1px solid var(--line); }
-  ul.plain li:last-child { border-bottom: 0; }
-  .row { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-  .meta { color: var(--muted); font-size: .92rem; }
-  footer { margin-top: 56px; color: var(--muted); font-size: .88rem; }
-  @media (max-width: 600px) {
-    .wrap { padding: 40px 16px 64px; }
-    .hero { flex-direction: column; align-items: flex-start; gap: 18px; }
-    .hero img { width: 112px; height: 112px; }
-  }
-</style>
+<link rel="preload" href="assets/fonts/bebas-neue-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
 </head>
-<body>
-<div class="wrap">
+<body id="top">
 
-<header class="hero">
-  <!-- To add a photo: put it at assets/photo.jpg (square, under 300 KB) and uncomment the next line. -->
-  <!-- <img src="assets/photo.jpg" alt="Portrait of Quanjun (Leah) Li"> -->
-  <div>
-    <h1>Quanjun (Leah) Li</h1>
-    <p class="subtitle">Human–AI trust, verification, and interaction design</p>
-    <nav class="links" aria-label="Contact and profiles">
-      <a href="mailto:quanjun.leah.li@gmail.com">Email</a>
-      <a href="https://github.com/its25sensei">GitHub</a>
-      <a href="https://linkedin.com/in/its25sensei">LinkedIn</a>
-    </nav>
-  </div>
+<header class="wrap bar">
+  <a href="./">Quanjun (Leah) Li</a>
+  <nav aria-label="Sections">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+  </nav>
 </header>
 
-<h2>About</h2>
-<p>I study how people come to trust AI systems through what interfaces show them: citations, source statements, and confidence cues that look like evidence but may not be checkable. My work combines behavioral experiments with interaction design, with the goal of building interfaces that help people's trust match the evidence behind an AI's output.</p>
-<p>I am now completing an M.S. in Computer Science and applying to Ph.D. programs for Fall 2027.</p>
-<a class="cta" href="portfolio/">View research portfolio</a>
+<main>
 
-<h2>Selected work</h2>
-<ul class="plain">
-  <li><a href="portfolio/#verification-theater"><strong>Verification Theater</strong></a><br><span class="meta">Do citations make wrong AI advice more persuasive, even when they cannot be checked?</span></li>
-  <li><a href="portfolio/#writing-sample"><strong>Source-Based AI Recommendation Explanations</strong></a><br><span class="meta">How the source an AI cites shapes perceived relevance, privacy concern, and trust.</span></li>
-  <li><a href="portfolio/#technical"><strong>Confidence calibration and Benford's Law analyses</strong></a><br><span class="meta">Python simulations and a screening analysis of about 3.2 million SEC filing values.</span></li>
-</ul>
+<section class="wrap hero">
+  <h2>Human–AI trust, verification, and interaction design</h2>
+  <div class="split">
+    <div>
+      <!-- To add a photo: put it at assets/photo.jpg (square, under 300 KB) and uncomment the next line. -->
+      <!-- <img class="portrait" src="assets/photo.jpg" alt="Portrait of Quanjun (Leah) Li" width="160" height="160"> -->
+      <ul class="contact-list" aria-label="Contact and profiles">
+        <li><a href="mailto:quanjun.leah.li@gmail.com">Email</a></li>
+        <li><a href="https://github.com/its25sensei">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/its25sensei">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="lede">I study how people come to trust AI systems through what interfaces show them.</p>
+      <a class="cta" href="portfolio/">View research portfolio</a>
+    </div>
+  </div>
+</section>
 
-<h2>Education</h2>
-<ul class="plain">
-  <li class="row"><span><strong>M.S., Computer Science</strong> · Sofia University</span><span class="meta">Expected 2027</span></li>
-  <li class="row"><span><strong>M.P.Ac., Professional Accountancy</strong> · University of California, San Diego</span><span class="meta">2023</span></li>
-  <li class="row"><span><strong>B.B.A., Accountancy</strong> · Western Michigan University</span><span class="meta">2022</span></li>
-</ul>
-
+<div class="band-white">
+<section class="wrap section" id="work">
+  <h2 class="section-head">Selected work</h2>
+  <ul class="rows">
+    <li><a class="row" href="portfolio/#verification-theater"><span class="row-title">Verification Theater</span><span class="row-desc">Do citations make wrong AI advice more persuasive, even when they cannot be checked?</span></a></li>
+    <li><a class="row" href="portfolio/#writing-sample"><span class="row-title">Source-Based AI Recommendation Explanations</span><span class="row-desc">How the source an AI cites shapes perceived relevance, privacy concern, and trust.</span></a></li>
+    <li><a class="row" href="portfolio/#technical"><span class="row-title">Confidence calibration and Benford's Law analyses</span><span class="row-desc">Python simulations and a screening analysis of about 3.2 million SEC filing values.</span></a></li>
+  </ul>
+</section>
 </div>
 
+<section class="wrap section" id="about">
+  <div class="split">
+    <h2>About</h2>
+    <div class="measure">
+      <p>I study how people come to trust AI systems through what interfaces show them: citations, source statements, and confidence cues that look like evidence but may not be checkable. My work combines behavioral experiments with interaction design, with the goal of building interfaces that help people's trust match the evidence behind an AI's output.</p>
+      <p>I am now completing an M.S. in Computer Science and applying to Ph.D. programs for Fall 2027.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section" id="education">
+  <div class="split">
+    <h2>Education</h2>
+    <ul class="plain">
+      <li><span><strong>M.S., Computer Science</strong> · Sofia University</span><span class="muted">Expected 2027</span></li>
+      <li><span><strong>M.P.Ac., Professional Accountancy</strong> · University of California, San Diego</span><span class="muted">2023</span></li>
+      <li><span><strong>B.B.A., Accountancy</strong> · Western Michigan University</span><span class="muted">2022</span></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="band-white foot" id="contact">
+  <div class="wrap">
+    <div class="foot-cols small">
+      <div>
+        <p class="muted">Pages</p>
+        <ul>
+          <li><a href="portfolio/">Research portfolio</a></li>
+          <li><a href="portfolio/docs/Leah_Li_Writing_Sample.pdf">Writing sample (PDF)</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="muted">Profiles</p>
+        <ul>
+          <li><a href="https://github.com/its25sensei">GitHub</a></li>
+          <li><a href="https://linkedin.com/in/its25sensei">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base small">
+      <a href="#top">Back to top</a>
+    </div>
+  </div>
+</footer>
+
 <script>
-// Subtle magnetic effect for the main button.
+// Subtle magnetic effect for the main link.
 // Runs only with a mouse or trackpad, and only if the visitor has not asked for reduced motion.
 (function () {
   var btn = document.querySelector('.cta');
@@ -104,8 +109,8 @@
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!canHover || reduce) return;
 
-  var RANGE = 90;     // how close the pointer must be, in px
-  var STRENGTH = 0.25; // fraction of the distance the button follows
+  var RANGE = 90;      // how close the pointer must be, in px
+  var STRENGTH = 0.25; // fraction of the distance the link follows
   var MAX = 10;        // largest shift in px
 
   function reset() {
@@ -116,7 +121,7 @@
 
   document.addEventListener('pointermove', function (e) {
     var r = btn.getBoundingClientRect();
-    // Measure from the button's resting position, not its shifted one.
+    // Measure from the link's resting position, not its shifted one.
     var mx = parseFloat(btn.style.getPropertyValue('--mx')) || 0;
     var my = parseFloat(btn.style.getPropertyValue('--my')) || 0;
     var cx = r.left - mx + r.width / 2;
