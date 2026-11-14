@@ -16,15 +16,13 @@
   <nav aria-label="Sections">
     <a href="#interpretive">Interpretive</a>
     <a href="#technical">Technical</a>
-    <a href="#creative">Creative</a>
-    <a href="../">Home</a>
   </nav>
 </header>
 
 <main>
 
 <section class="wrap hero">
-  <h2>Research portfolio</h2>
+  <h1>Research portfolio</h1>
   <div class="split">
     <ul class="contact-list" aria-label="Contact and profiles">
       <li><a href="mailto:quanjun.leah.li@gmail.com">Email</a></li>
@@ -39,22 +37,11 @@
   </div>
 </section>
 
-<div class="band-white">
-<section class="wrap section" id="start">
-  <h2 class="section-head">Where to start</h2>
-  <ol class="rows">
-    <li><a class="row numbered" href="#writing-sample"><span class="row-num">1</span><span class="row-title">Writing sample</span><span class="row-desc">A research proposal on how the source of an AI explanation shapes trust and privacy concern.</span></a></li>
-    <li><a class="row numbered" href="#verification-theater"><span class="row-num">2</span><span class="row-title">Verification Theater</span><span class="row-desc">An experiment on whether citations make wrong AI advice more persuasive.</span></a></li>
-    <li><a class="row numbered" href="#prototype"><span class="row-num">3</span><span class="row-title">Interactive prototype</span><span class="row-desc">The participant-facing interface for Verification Theater.</span></a></li>
-  </ol>
-</section>
-</div>
-
 <!-- ============ INTERPRETIVE ============ -->
 <section class="wrap section" id="interpretive">
   <div class="split section-head">
     <h2>Interpretive</h2>
-    <p>Social-scientific research on how people interpret AI-generated evidence. This is the primary focus of my work.</p>
+    <p>Social-scientific research on how people interpret AI-generated evidence, and the study interface built to test it. This is the primary focus of my work.</p>
   </div>
 
   <article class="project split" id="writing-sample">
@@ -91,61 +78,6 @@
       </div>
     </div>
   </article>
-</section>
-
-<!-- ============ TECHNICAL ============ -->
-<section class="wrap section" id="technical">
-  <div class="split section-head">
-    <h2>Technical</h2>
-    <p>Analysis pipelines and simulations in Python.</p>
-  </div>
-
-  <article class="project split">
-    <div>
-      <h3>Verification Theater&nbsp;· Analysis pipeline</h3>
-      <p class="tags"><span>Python</span><span>Simulated data</span><span>Independent</span></p>
-    </div>
-    <div class="project-body">
-      <p>A reproducible pipeline covering hypothesis tests, bootstrap mediation analysis, and visualization, validated end to end on simulated data. The figures below show the pipeline recovering the patterns built into the simulation; they are not results from participants.</p>
-      <div class="figs">
-        <figure><img src="assets/fig1_trust.png" alt="Simulated trust by citation condition" loading="lazy"><figcaption>Trust by condition (simulated)</figcaption></figure>
-        <figure><img src="assets/fig2_adoption.png" alt="Simulated adoption of the incorrect recommendation by condition" loading="lazy"><figcaption>Adoption of the incorrect recommendation (simulated)</figcaption></figure>
-        <figure class="wide"><img src="assets/fig3_verification.png" alt="Simulated perceived verifiability and source clicks" loading="lazy"><figcaption>Perceived verifiability and source clicks (simulated)</figcaption></figure>
-      </div>
-      <div class="actions"><a href="https://github.com/its25sensei/verification-theater">Code on GitHub</a></div>
-    </div>
-  </article>
-
-  <article class="project split">
-    <div>
-      <h3>Confidence-calibration simulation</h3>
-      <p class="tags"><span>Python · Jupyter</span><span>Simulated data</span><span>Independent</span></p>
-    </div>
-    <div class="project-body">
-      <p>A design probe on the system side of the same problem: how far an AI's stated confidence can drift from its accuracy. It compares an overconfident and a confidence-matched condition using expected calibration error (ECE: 0.275 vs. 0.026 in one simulated run). It led to the question that connects my projects: does a well-calibrated system actually help users calibrate their trust?</p>
-      <figure class="narrow"><img src="assets/ece_calibration.png" alt="Calibration curves for the two simulated conditions" loading="lazy"><figcaption>Calibration curves for the two simulated conditions</figcaption></figure>
-      <div class="actions"><a href="https://github.com/its25sensei/vt-ece">Notebook on GitHub</a></div>
-    </div>
-  </article>
-
-  <article class="project split">
-    <div>
-      <h3>Benford's Law screening of SEC filings</h3>
-      <p class="tags"><span>Python · pandas · scipy</span><span>~3.2M values</span><span>Independent</span></p>
-    </div>
-    <div class="project-body">
-      <p>I applied Benford's Law screening to approximately 3.2 million values from SEC XBRL filings and cross-validated flagged observations against an independent accrual-based indicator. The anomalies that survived reflected the reporting structure of business development companies rather than manipulation: a statistically real signal that, read without its context, would have suggested misconduct that was not there.</p>
-      <div class="actions"><a href="https://github.com/its25sensei/benford-anomaly-detection">Code on GitHub</a></div>
-    </div>
-  </article>
-</section>
-
-<!-- ============ CREATIVE & INTERACTIVE ============ -->
-<section class="wrap section" id="creative">
-  <div class="split section-head">
-    <h2>Creative &amp; Interactive</h2>
-    <p>Interface design for making AI evidence inspectable.</p>
-  </div>
 
   <article class="project" id="prototype">
     <div class="split">
@@ -199,47 +131,59 @@
       </div>
     </div>
   </article>
+</section>
 
-  <!-- TODO (Leah): add live demo link, screenshots, and repo link after the team agrees and the final project is submitted. -->
-  <article class="project split" id="sourcelens">
+<!-- ============ TECHNICAL ============ -->
+<section class="wrap section" id="technical">
+  <div class="split section-head">
+    <h2>Technical</h2>
+    <p>Analysis pipelines and simulations in Python.</p>
+  </div>
+
+  <article class="project split">
     <div>
-      <h3>SourceLens&nbsp;· Explainable product recommendations</h3>
-      <p class="tags"><span>Team project</span><span>Streamlit · Python · Figma</span><span class="pending">In progress</span></p>
+      <h3>Verification Theater&nbsp;· Analysis pipeline</h3>
+      <p class="tags"><span>Python</span><span>Simulated data</span><span>Independent</span></p>
     </div>
     <div class="project-body">
-      <p>A headphone recommendation system in which every recommendation reason links to the specific evidence behind it: a product specification, an attributed review excerpt, or the user's own stated preference. Users can inspect each reason–source connection directly instead of relying on a general explanation.</p>
-      <p><strong>My contribution:</strong> project manager and UI/UX designer. I led requirements and project coordination and designed the interface in Figma. The recommendation engine and evidence mapping were built by Chaitanya Mehta; the front end, integration, and testing by Shuonan Chen.</p>
-      <div class="placeholder">Live demo and screenshots will be added here.</div>
+      <p>A reproducible pipeline covering hypothesis tests, bootstrap mediation analysis, and visualization, validated end to end on simulated data. The figures below show the pipeline recovering the patterns built into the simulation; they are not results from participants.</p>
+      <div class="figs">
+        <figure><img src="assets/fig1_trust.png" alt="Simulated trust by citation condition" loading="lazy"><figcaption>Trust by condition (simulated)</figcaption></figure>
+        <figure><img src="assets/fig2_adoption.png" alt="Simulated adoption of the incorrect recommendation by condition" loading="lazy"><figcaption>Adoption of the incorrect recommendation (simulated)</figcaption></figure>
+        <figure class="wide"><img src="assets/fig3_verification.png" alt="Simulated perceived verifiability and source clicks" loading="lazy"><figcaption>Perceived verifiability and source clicks (simulated)</figcaption></figure>
+      </div>
+      <div class="actions"><a href="https://github.com/its25sensei/verification-theater">Code on GitHub</a></div>
+    </div>
+  </article>
+
+  <article class="project split">
+    <div>
+      <h3>Confidence-calibration simulation</h3>
+      <p class="tags"><span>Python · Jupyter</span><span>Simulated data</span><span>Independent</span></p>
+    </div>
+    <div class="project-body">
+      <p>A design probe on the system side of the same problem: how far an AI's stated confidence can drift from its accuracy. It compares an overconfident and a confidence-matched condition using expected calibration error (ECE: 0.275 vs. 0.026 in one simulated run). It led to the question that connects my projects: does a well-calibrated system actually help users calibrate their trust?</p>
+      <figure class="narrow"><img src="assets/ece_calibration.png" alt="Calibration curves for the two simulated conditions" loading="lazy"><figcaption>Calibration curves for the two simulated conditions</figcaption></figure>
+      <div class="actions"><a href="https://github.com/its25sensei/vt-ece">Notebook on GitHub</a></div>
+    </div>
+  </article>
+
+  <article class="project split">
+    <div>
+      <h3>Benford's Law screening of SEC filings</h3>
+      <p class="tags"><span>Python · pandas · scipy</span><span>~3.2M values</span><span>Independent</span></p>
+    </div>
+    <div class="project-body">
+      <p>I applied Benford's Law screening to approximately 3.2 million values from SEC XBRL filings and cross-validated flagged observations against an independent accrual-based indicator. The anomalies that survived reflected the reporting structure of business development companies rather than manipulation: a statistically real signal that, read without its context, would have suggested misconduct that was not there.</p>
+      <div class="actions"><a href="https://github.com/its25sensei/benford-anomaly-detection">Code on GitHub</a></div>
     </div>
   </article>
 </section>
 
 </main>
 
-<footer class="band-white foot" id="contact">
-  <div class="wrap">
-    <div class="foot-cols small">
-      <div>
-        <p class="muted">Pages</p>
-        <ul>
-          <li><a href="../">Home</a></li>
-          <li><a href="docs/Leah_Li_Writing_Sample.pdf">Writing sample (PDF)</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="muted">Profiles</p>
-        <ul>
-          <li><a href="https://github.com/its25sensei">GitHub</a></li>
-          <li><a href="https://linkedin.com/in/its25sensei">LinkedIn</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="foot-base small">
-      <p class="muted">Last updated: November 2026</p>
-      <a href="#top">Back to top</a>
-    </div>
-  </div>
-</footer>
+<a class="to-top" href="#top" aria-label="Back to top"><span aria-hidden="true">↑</span> Top</a>
+<script src="../assets/site.js" defer></script>
 
 </body>
 </html>

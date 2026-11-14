@@ -13,17 +13,15 @@
 
 <header class="wrap bar">
   <a href="./">Quanjun (Leah) Li</a>
-  <nav aria-label="Sections">
-    <a href="#work">Work</a>
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
+  <nav aria-label="Pages">
+    <a href="portfolio/">Research portfolio</a>
   </nav>
 </header>
 
 <main>
 
 <section class="wrap hero">
-  <h2>Human–AI trust, verification, and interaction design</h2>
+  <h1>Human–AI trust, verification, and interaction design</h1>
   <div class="split">
     <div>
       <!-- To add a photo: put it at assets/photo.jpg (square, under 300 KB) and uncomment the next line. -->
@@ -36,21 +34,10 @@
     </div>
     <div>
       <p class="lede">I study how people come to trust AI systems through what interfaces show them.</p>
-      <a class="cta" href="portfolio/">View research portfolio</a>
+      <a class="cta" href="portfolio/">View research portfolio <span class="cta-arrow" aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
-
-<div class="band-white">
-<section class="wrap section" id="work">
-  <h2 class="section-head">Selected work</h2>
-  <ul class="rows">
-    <li><a class="row" href="portfolio/#verification-theater"><span class="row-title">Verification Theater</span><span class="row-desc">Do citations make wrong AI advice more persuasive, even when they cannot be checked?</span></a></li>
-    <li><a class="row" href="portfolio/#writing-sample"><span class="row-title">Source-Based AI Recommendation Explanations</span><span class="row-desc">How the source an AI cites shapes perceived relevance, privacy concern, and trust.</span></a></li>
-    <li><a class="row" href="portfolio/#technical"><span class="row-title">Confidence calibration and Benford's Law analyses</span><span class="row-desc">Python simulations and a screening analysis of about 3.2 million SEC filing values.</span></a></li>
-  </ul>
-</section>
-</div>
 
 <section class="wrap section" id="about">
   <div class="split">
@@ -75,32 +62,11 @@
 
 </main>
 
-<footer class="band-white foot" id="contact">
-  <div class="wrap">
-    <div class="foot-cols small">
-      <div>
-        <p class="muted">Pages</p>
-        <ul>
-          <li><a href="portfolio/">Research portfolio</a></li>
-          <li><a href="portfolio/docs/Leah_Li_Writing_Sample.pdf">Writing sample (PDF)</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="muted">Profiles</p>
-        <ul>
-          <li><a href="https://github.com/its25sensei">GitHub</a></li>
-          <li><a href="https://linkedin.com/in/its25sensei">LinkedIn</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="foot-base small">
-      <a href="#top">Back to top</a>
-    </div>
-  </div>
-</footer>
+<a class="to-top" href="#top" aria-label="Back to top"><span aria-hidden="true">↑</span> Top</a>
+<script src="assets/site.js" defer></script>
 
 <script>
-// Subtle magnetic effect for the main link.
+// Subtle magnetic effect for the main button.
 // Runs only with a mouse or trackpad, and only if the visitor has not asked for reduced motion.
 (function () {
   var btn = document.querySelector('.cta');
